@@ -43,3 +43,22 @@ def num_within(x, a, b):
 
 print(num_within(2,1,5))
 print(num_within(6,1,5))
+
+# Write a Python function called pascal() that prints out the first n rows of Pascal's triangle.
+# The function accepts the number n, the number of rows to print
+# Note : Pascal's triangle is an arithmetic and geometric figure first imagined by Blaise Pascal. Each number is the two numbers above it added together.
+
+def pascal(n):
+    triangle = [[1]]
+    for i in range(1, n):
+        row = [1]
+        # ForLoop over the previous row 
+        for j in range(1, i):
+            row.append(triangle[i-1][j-1] + triangle[i-1][j])
+        row.append(1)
+        triangle.append(row)
+    for row in triangle:
+        print(row)
+
+pascal(3)
+pascal(5)
